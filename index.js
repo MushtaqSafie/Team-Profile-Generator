@@ -1,10 +1,71 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-let data = [];
-let managerInfo = [];
-let engineerInfo = [];
-let internInfo = [];
+const managerList = [];
+const engineerList = [];
+const internList = [];
+
+class Employee {
+  constructor(name, id, email) {
+    this.name = name;
+    this.id = id;
+    this.email = email;
+    this.role = 'Employee';
+  }
+  getName() {
+    return this.name
+  };
+  getId() {
+    return this.id
+  };
+  getEmail() {
+    return this.email
+  };
+  getRole() {
+    return this.role
+  };
+};
+
+
+class Manager extends Employee {
+  constructor(name, id, email, officeNumber) {
+    super(name, id, email)
+    this.role = 'Manager';
+    this.officeNumber = officeNumber;
+  }
+  getRole() {
+    return this.role
+  }; // RETURNS 'Manager'
+};
+
+class Engineer extends Employee {
+  constructor(name, id, email, github) {
+    super(name, id, email)
+    this.role = 'Engineer';
+    this.github = github;
+  }
+  getGithub() {
+    return this.github
+  };
+  getRole() {
+    return this.role
+  }; // RETURNS 'Engineer'
+}
+
+class Intern extends Employee {
+  constructor(name, id, email, school) {
+    super(name, id, email)
+    this.role = 'Intern';
+    this.school = school;
+  }
+  getSchool() {
+    return this.school
+  };
+  getRole() {
+    return this.role
+  }; // RETURNS 'Intern'
+}
+
 
 const promptManager = () => inquirer.prompt([
   {
@@ -27,50 +88,15 @@ const promptManager = () => inquirer.prompt([
     name: "managerNumber",
     message: "Enter the team manager's office number",
   },
-]).then(res => {
-  res.role = 'manager';
-  data.push(res)
+]).then(e => {
+  let newTeam = new Manager(e.managerName , e.managerID , e.managerEmail , e.managerNumber);
+  managerList.push(newTeam);
   addMore();
 }).catch(err => {
   console.log(err);
 });
 
 promptManager();
-
-const addMore = () => inquirer.prompt([
-  {
-    type: 'list',
-    name: 'newTeam',
-    message: 'Add new team members OR Finish',
-    choices: [
-      'Add an engineer',
-      'Add an intern',
-      'Finish building my team',
-    ],
-  },
-]).then(res => {
-  console.log(res);
-  switch (res.newTeam) {
-    case 'Add an engineer':
-      promptEngineer();
-      break;
-    case 'Add an intern':
-      promptIntern();
-      break;
-    case 'Finish building my team':
-      console.log(data);
-      managerInfo = data.filter(e => e.role == 'manager');
-      engineerInfo = data.filter(e => e.role == 'engineer');
-      internInfo = data.filter(e => e.role == 'intern');
-      break;
-
-    default:
-      addMore();
-      break;
-  }
-}).catch(err => {
-  console.log(err);
-});
 
 const promptEngineer = () => inquirer.prompt([
   {
@@ -93,9 +119,9 @@ const promptEngineer = () => inquirer.prompt([
     name: "engineerGithub",
     message: "Enter the engineer's GitHub username",
   },
-]).then(res => {
-  res.role = 'engineer'
-  data.push(res)
+]).then(e => {
+  let newTeam = new Engineer(e.engineerName , e.engineerID , e.engineerEmail , e.engineerGithub);
+  engineerList.push(newTeam);
   addMore();
 }).catch(err => {
   console.log(err);
@@ -122,71 +148,46 @@ const promptIntern = () => inquirer.prompt([
     name: "internSchool",
     message: "Enter the intern's school",
   },
-]).then(res => {
-  res.role = 'intern';
-  data.push(res)
+]).then(e => {
+  let newTeam = new Intern(e.internName , e.internID , e.internEmail , e.internSchool);
+  internList.push(newTeam);
   addMore();
 }).catch(err => {
   console.log(err);
 });
 
-class Employee {
-  constructor(name, id, email) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    this.role = 'Employee';
+
+const addMore = () => inquirer.prompt([
+  {
+    type: 'list',
+    name: 'newTeam',
+    message: 'Add new team members OR Finish',
+    choices: [
+      'Add an engineer',
+      'Add an intern',
+      'Finish building my team',
+    ],
+  },
+]).then(res => {
+  console.log(res);
+  switch (res.newTeam) {
+    case 'Add an engineer':
+      promptEngineer();
+      break;
+    case 'Add an intern':
+      promptIntern();
+      break;
+    case 'Finish building my team':
+      console.log(managerList);
+      console.log(engineerList);
+      console.log(internList);
+
+      break;
+
+    default:
+      addMore();
+      break;
   }
-
-  getName() {
-    return this.name
-  };
-  getId() {
-    return this.id
-  };
-  getEmail() {
-    return this.email
-  };
-  getRole() {
-    return this.role
-  };
-};
-
-
-class Manager extends Employee {
-  constructor(officeNumber) {
-    
-
-    super(name, id, email)
-    this.officeNumber = officeNumber;
-  }
-  getRole() {}; // RETURNS 'Manager'
-};
-
-class Engineer extends Employee {
-  constructor(github) {
-
-    super(name, id, email)
-    this.github = github;
-  }
-  getGithub() {};
-  getRole() {}; // RETURNS 'Engineer'
-}
-
-class Intern extends Employee {
-  constructor(school) {
-    
-
-    super(name, id, email)
-    this.school = school;
-  }
-  getSchool() {};
-  getRole() {}; // RETURNS 'Intern'
-}
-
-
-// console.log(data);
-
-// let dataa = news.getName();
-// console.log(dataa);
-// console.log(news.getName());
+}).catch(err => {
+  console.log(err);
+});
