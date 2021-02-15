@@ -66,13 +66,13 @@ All you need is to answer the prompt question and the application will generate 
 
 ## Screenshots
 ### Prompt questions on terminal command-line
-![Image of prompt questions](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/promptQuestions.JPG)
+![Image of prompt questions](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/prompt.JPG)
 
 ### Generated newIndex.html file (source file screenshot)
-![Image of newIndex.html source file](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/readmecode.JPG)
+![Image of newIndex.html source file](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/html.JPG)
 
 ### newIndex.html display
-![Image of newIndex.html](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/readme.JPG)
+![Image of newIndex.html](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/output.JPG)
 
 
 ## Tests
