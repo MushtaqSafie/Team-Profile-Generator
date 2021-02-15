@@ -1,7 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const classes = require('./lib/classes');
-const renderHTML = require('./dist/renderHTML')
+const renderHTML = require('./src/renderHTML')
 
 const managerList = [];
 const engineerList = [];
