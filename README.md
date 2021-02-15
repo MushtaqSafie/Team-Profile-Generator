@@ -82,7 +82,7 @@ npm run test
 ```
 
 ### Screenshot of pass test
-![test](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/test.JPG)
+![test](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/test2.JPG)
 
 
 ## License
