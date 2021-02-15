@@ -64,8 +64,15 @@ All you need is to answer the prompt question and the application will generate 
 
 [Click Here](https://drive.google.com/file/d/1jxbrEhsSHyNQBtOd_zqm-LFPxm8Zr_En/view) to view walkthrough video of how to use the application.
 
-## Usage
-Create team profile for a software engineer team
+## Screenshots
+### Prompt questions on terminal command-line
+![Image of prompt questions](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/promptQuestions.JPG)
+
+### Generated newIndex.html file (source file screenshot)
+![Image of newIndex.html source file](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/readmecode.JPG)
+
+### newIndex.html display
+![Image of newIndex.html](https://raw.githubusercontent.com/MushtaqSafie/README.md-Generator/main/assets/readme.JPG)
 
 
 ## Tests
