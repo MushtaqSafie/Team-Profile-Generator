@@ -125,8 +125,8 @@ const addMore = () => inquirer.prompt([
       console.log(internList);
 
       let myFile = renderHTML(managerList, engineerList, internList);
-      fs.writeFileSync('index2.html', myFile);
-      console.log('Successfully index2.html is created');
+      fs.writeFileSync('newIndex.html', myFile);
+      console.log('Successfully newIndex.html is created');
       break;
 
     default:

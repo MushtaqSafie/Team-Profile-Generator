@@ -55,6 +55,10 @@ Enter the intern's email address ?
 Enter the intern's school ?
 ```
 And finily if you would choose to Finish building my team then application will generate the html file.
+```
+----  Finish building my team  ----
+Successfully newIndex.html is created
+```
 
 All you need is to answer the prompt question and the application will generate the html file automatically using your responses.
 
