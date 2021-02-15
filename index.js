@@ -1,70 +1,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const classes = require('./lib/classes');
+
 
 const managerList = [];
 const engineerList = [];
 const internList = [];
-
-class Employee {
-  constructor(name, id, email) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    this.role = 'Employee';
-  }
-  getName() {
-    return this.name
-  };
-  getId() {
-    return this.id
-  };
-  getEmail() {
-    return this.email
-  };
-  getRole() {
-    return this.role
-  };
-};
-
-
-class Manager extends Employee {
-  constructor(name, id, email, officeNumber) {
-    super(name, id, email)
-    this.role = 'Manager';
-    this.officeNumber = officeNumber;
-  }
-  getRole() {
-    return this.role
-  }; // RETURNS 'Manager'
-};
-
-class Engineer extends Employee {
-  constructor(name, id, email, github) {
-    super(name, id, email)
-    this.role = 'Engineer';
-    this.github = github;
-  }
-  getGithub() {
-    return this.github
-  };
-  getRole() {
-    return this.role
-  }; // RETURNS 'Engineer'
-}
-
-class Intern extends Employee {
-  constructor(name, id, email, school) {
-    super(name, id, email)
-    this.role = 'Intern';
-    this.school = school;
-  }
-  getSchool() {
-    return this.school
-  };
-  getRole() {
-    return this.role
-  }; // RETURNS 'Intern'
-}
 
 
 const promptManager = () => inquirer.prompt([
@@ -89,7 +30,7 @@ const promptManager = () => inquirer.prompt([
     message: "Enter the team manager's office number",
   },
 ]).then(e => {
-  let newTeam = new Manager(e.managerName , e.managerID , e.managerEmail , e.managerNumber);
+  let newTeam = new classes.Manager(e.managerName , e.managerID , e.managerEmail , e.managerNumber);
   managerList.push(newTeam);
   addMore();
 }).catch(err => {
@@ -120,7 +61,7 @@ const promptEngineer = () => inquirer.prompt([
     message: "Enter the engineer's GitHub username",
   },
 ]).then(e => {
-  let newTeam = new Engineer(e.engineerName , e.engineerID , e.engineerEmail , e.engineerGithub);
+  let newTeam = new classes.Engineer(e.engineerName , e.engineerID , e.engineerEmail , e.engineerGithub);
   engineerList.push(newTeam);
   addMore();
 }).catch(err => {
@@ -149,7 +90,7 @@ const promptIntern = () => inquirer.prompt([
     message: "Enter the intern's school",
   },
 ]).then(e => {
-  let newTeam = new Intern(e.internName , e.internID , e.internEmail , e.internSchool);
+  let newTeam = new classes.Intern(e.internName , e.internID , e.internEmail , e.internSchool);
   internList.push(newTeam);
   addMore();
 }).catch(err => {
