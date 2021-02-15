@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Team profile genereator creates a html file of team members based on user inputs in the command line termainl. TO use the appliaction run 
+Team profile genereator creates a index.html file of team members based on user inputs in the command line termainl. The application prompt question on command line termainl and once you finished the adding team members then the appliaction will genereate the index.html file.
 
 ## Table of Contents
 - [Description](#Description)
@@ -76,7 +76,13 @@ All you need is to answer the prompt question and the application will generate 
 
 
 ## Tests
+The application has 4 Test Suites and 16 tests using npm jest, in order to test all the classes function within the appliaction. TO run test files type the following in terminal.
+```
 npm run test
+```
+
+### Screenshot of pass test
+![test](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/output.JPG)
 
 
 ## License
