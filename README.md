@@ -38,7 +38,23 @@ then select from the following menu to add more team members of finish the appli
       - Add an intern'
       - Finish building my team
 ```
-
+If you would choose to Add an engineer then the following questions will be prompt
+```
+----  Add an engineer  ----
+Enter the engineer's name ?
+Enter the engineer's employer ID ?
+Enter the engineer's email address ?
+Enter the engineer's GitHub username ?
+```
+If you would choose to Add an intern then the following questions will be prompt
+```
+----  Add an intern  ----
+Enter the intern's name ?
+Enter the intern's school ID ?
+Enter the intern's email address ?
+Enter the intern's school ?
+```
+And finily if you would choose to Finish building my team then application will generate the html file.
 
 All you need is to answer the prompt question and the application will generate the html file automatically using your responses.
 
