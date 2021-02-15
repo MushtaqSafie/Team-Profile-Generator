@@ -46,7 +46,7 @@ const renderHTML = (m, e, s) => {
           <div class="card-body">
             <ul class="list-group">
               <li class="list-group-item">ID: ${m[0].id}</li>
-              <li class="list-group-item">Eamil: <a href="mailto:${m[0].email}?subject=Mail from My Team">${m[0].email}</a></li>
+              <li class="list-group-item">Email: <a href="mailto:${m[0].email}?subject=Mail from My Team">${m[0].email}</a></li>
               <li class="list-group-item">Office Number: ${1}</li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ const renderHTML = (m, e, s) => {
       <div class="card-body">
         <ul class="list-group">
           <li class="list-group-item">ID: ${e[i].id}</li>
-          <li class="list-group-item">Eamil: <a href="mailto:${e[i].email}?subject=Mail from My Team">${e[i].email}</a></li>
+          <li class="list-group-item">Email: <a href="mailto:${e[i].email}?subject=Mail from My Team">${e[i].email}</a></li>
           <li class="list-group-item">GitHub:  <a href="https://github.com/${e[i].github}/" target=”_blank”>${e[i].github}</a></li>
         </ul>
       </div>
@@ -79,7 +79,7 @@ const renderHTML = (m, e, s) => {
       <div class="card-body">
         <ul class="list-group">
           <li class="list-group-item">ID: ${s[n].id}</li>
-          <li class="list-group-item">Eamil: <a href="mailto:${s[n].email}?subject=Mail from My Team">${s[n].email}</a></li>
+          <li class="list-group-item">Email: <a href="mailto:${s[n].email}?subject=Mail from My Team">${s[n].email}</a></li>
           <li class="list-group-item">School: ${s[n].school}</li>
         </ul>
       </div>

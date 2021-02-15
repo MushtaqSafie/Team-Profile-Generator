@@ -7,7 +7,8 @@ Team profile genereator creates a index.html file of team members based on user 
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
-- [Usage](#Usage)
+- [How to Use](#How-to-Use)
+- [Screenshots](#Screenshots)
 - [Tests](#Tests)
 - [License](#License)
 - [Questions](#Questions)
@@ -62,7 +63,7 @@ Successfully index.html is created
 
 All you need is to answer the prompt question and the application will generate the html file automatically using your responses.
 
-[Click Here](https://drive.google.com/file/d/1jxbrEhsSHyNQBtOd_zqm-LFPxm8Zr_En/view) to view walkthrough video of how to use the application.
+[Click Here](https://drive.google.com/file/d/1L6Ck8xsNPa3jrBAxzBi8LBfj6zE2a6FC/view) to view walkthrough video of how to use the application.
 
 ## Screenshots
 ### Prompt questions on terminal command-line
