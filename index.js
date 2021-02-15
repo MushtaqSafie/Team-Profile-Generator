@@ -2,6 +2,9 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 let data = [];
+let managerInfo = [];
+let engineerInfo = [];
+let internInfo = [];
 
 const promptManager = () => inquirer.prompt([
   {
@@ -25,13 +28,14 @@ const promptManager = () => inquirer.prompt([
     message: "Enter the team manager's office number",
   },
 ]).then(res => {
+  res.role = 'manager';
   data.push(res)
   addMore();
 }).catch(err => {
   console.log(err);
 });
 
-promptManager()
+promptManager();
 
 const addMore = () => inquirer.prompt([
   {
@@ -55,6 +59,9 @@ const addMore = () => inquirer.prompt([
       break;
     case 'Finish building my team':
       console.log(data);
+      managerInfo = data.filter(e => e.role == 'manager');
+      engineerInfo = data.filter(e => e.role == 'engineer');
+      internInfo = data.filter(e => e.role == 'intern');
       break;
 
     default:
@@ -87,6 +94,7 @@ const promptEngineer = () => inquirer.prompt([
     message: "Enter the engineer's GitHub username",
   },
 ]).then(res => {
+  res.role = 'engineer'
   data.push(res)
   addMore();
 }).catch(err => {
@@ -115,8 +123,70 @@ const promptIntern = () => inquirer.prompt([
     message: "Enter the intern's school",
   },
 ]).then(res => {
+  res.role = 'intern';
   data.push(res)
   addMore();
 }).catch(err => {
   console.log(err);
 });
+
+class Employee {
+  constructor(name, id, email) {
+    this.name = name;
+    this.id = id;
+    this.email = email;
+    this.role = 'Employee';
+  }
+
+  getName() {
+    return this.name
+  };
+  getId() {
+    return this.id
+  };
+  getEmail() {
+    return this.email
+  };
+  getRole() {
+    return this.role
+  };
+};
+
+
+class Manager extends Employee {
+  constructor(officeNumber) {
+    
+
+    super(name, id, email)
+    this.officeNumber = officeNumber;
+  }
+  getRole() {}; // RETURNS 'Manager'
+};
+
+class Engineer extends Employee {
+  constructor(github) {
+
+    super(name, id, email)
+    this.github = github;
+  }
+  getGithub() {};
+  getRole() {}; // RETURNS 'Engineer'
+}
+
+class Intern extends Employee {
+  constructor(school) {
+    
+
+    super(name, id, email)
+    this.school = school;
+  }
+  getSchool() {};
+  getRole() {}; // RETURNS 'Intern'
+}
+
+
+// console.log(data);
+
+// let dataa = news.getName();
+// console.log(dataa);
+// console.log(news.getName());
