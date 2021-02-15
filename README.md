@@ -57,7 +57,7 @@ Enter the intern's school ?
 And finily if you would choose to Finish building my team then application will generate the html file.
 ```
 ----  Finish building my team  ----
-Successfully newIndex.html is created
+Successfully index.html is created
 ```
 
 All you need is to answer the prompt question and the application will generate the html file automatically using your responses.
@@ -68,11 +68,11 @@ All you need is to answer the prompt question and the application will generate 
 ### Prompt questions on terminal command-line
 ![Image of prompt questions](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/prompt.JPG)
 
-### Generated newIndex.html file (source file screenshot)
-![Image of newIndex.html source file](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/html.JPG)
+### Generated index.html file (source file screenshot)
+![Image of index.html source file](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/html.JPG)
 
-### newIndex.html display
-![Image of newIndex.html](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/output.JPG)
+### index.html display
+![Image of index.html](https://raw.githubusercontent.com/MushtaqSafie/Team-Profile-Generator/main/assets/output.JPG)
 
 
 ## Tests
