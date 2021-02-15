@@ -30,8 +30,15 @@ Enter the team manager's name ?
 Enter the team manager's employee ID ?
 Enter the team manager's email address ?
 Enter the team manager's office number ?
-
 ```
+then select from the following menu to add more team members of finish the application
+```
+----  Add new team members OR Finish  ----
+      - Add an engineer
+      - Add an intern'
+      - Finish building my team
+```
+
 
 All you need is to answer the prompt question and the application will generate the html file automatically using your responses.
 
