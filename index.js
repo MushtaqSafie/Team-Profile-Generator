@@ -1,7 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const classes = require('./lib/classes');
-
+const renderHTML = require('./dist/renderHTML')
 
 const managerList = [];
 const engineerList = [];
@@ -31,7 +31,8 @@ const promptManager = () => inquirer.prompt([
   },
 ]).then(e => {
   let newTeam = new classes.Manager(e.managerName , e.managerID , e.managerEmail , e.managerNumber);
-  managerList.push(newTeam);
+  // JSON.parse and then JSON.stringify is because to remove the name of class that been create by above function e.g:  Manager {...} ==> {...}
+  managerList.push(JSON.parse(JSON.stringify(newTeam)));
   addMore();
 }).catch(err => {
   console.log(err);
@@ -62,7 +63,7 @@ const promptEngineer = () => inquirer.prompt([
   },
 ]).then(e => {
   let newTeam = new classes.Engineer(e.engineerName , e.engineerID , e.engineerEmail , e.engineerGithub);
-  engineerList.push(newTeam);
+  engineerList.push(JSON.parse(JSON.stringify(newTeam)));
   addMore();
 }).catch(err => {
   console.log(err);
@@ -91,7 +92,7 @@ const promptIntern = () => inquirer.prompt([
   },
 ]).then(e => {
   let newTeam = new classes.Intern(e.internName , e.internID , e.internEmail , e.internSchool);
-  internList.push(newTeam);
+  internList.push(JSON.parse(JSON.stringify(newTeam)));
   addMore();
 }).catch(err => {
   console.log(err);
@@ -122,6 +123,10 @@ const addMore = () => inquirer.prompt([
       console.log(managerList);
       console.log(engineerList);
       console.log(internList);
+
+      let myFile = renderHTML(managerList, engineerList, internList);
+      fs.writeFileSync('index2.html', myFile);
+      console.log('Successfully index2.html is created');
       break;
 
     default:
