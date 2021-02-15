@@ -122,7 +122,6 @@ const addMore = () => inquirer.prompt([
       console.log(managerList);
       console.log(engineerList);
       console.log(internList);
-
       break;
 
     default:
